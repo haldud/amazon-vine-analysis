@@ -35,9 +35,9 @@ WHERE star_rating = 5;
 
 -- Paid, percentage of 5-star reviews
 SELECT ROUND(CAST((SELECT COUNT(review_id)
-		           FROM vine_helpful_filtered_vine five_star
-		           WHERE star_rating = 5) AS NUMERIC) /
-	         CAST(COUNT(review_id) AS NUMERIC) * 100, 2) AS percent_five_star
+                   FROM vine_helpful_filtered_vine five_star
+                   WHERE star_rating = 5) AS NUMERIC) /
+             CAST(COUNT(review_id) AS NUMERIC) * 100, 2) AS percent_five_star
 FROM vine_helpful_filtered_vine;
 
 -- Unpaid, total
@@ -51,7 +51,7 @@ WHERE star_rating = 5;
 
 -- Unpaid, percentage of 5-star reviews
 SELECT ROUND(CAST((SELECT COUNT(review_id)
-		           FROM vine_helpful_filtered_non_vine five_star
-		           WHERE star_rating = 5) AS NUMERIC) /
-	         CAST(COUNT(review_id) AS NUMERIC) * 100, 2) AS percent_five_star
+                   FROM vine_helpful_filtered_non_vine five_star
+                   WHERE star_rating = 5) AS NUMERIC) /
+             CAST(COUNT(review_id) AS NUMERIC) * 100, 2) AS percent_five_star
 FROM vine_helpful_filtered_non_vine;
